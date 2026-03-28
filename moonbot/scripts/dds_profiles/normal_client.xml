@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This profile is to be used by ground control PCs, not robots -->
+<dds>
+  <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+
+    <data_writer profile_name="tf">
+      <topic>
+        <name>/tf</name>
+        <dataType>tf2_msgs::msg::TFMessage</dataType>
+        <historyQos>
+          <kind>KEEP_LAST</kind>
+          <depth>10</depth>
+        </historyQos>
+      </topic>
+      <qos>
+        <reliability>
+          <kind>BEST_EFFORT</kind>
+        </reliability>
+      </qos>
+    </data_writer>
+
+    <data_reader profile_name="tf">
+      <topic>
+        <name>/tf</name>
+        <dataType>tf2_msgs::msg::TFMessage</dataType>
+        <historyQos>
+          <kind>KEEP_LAST</kind>
+          <depth>10</depth>
+        </historyQos>
+      </topic>
+      <qos>
+        <reliability>
+          <kind>BEST_EFFORT</kind>
+        </reliability>
+      </qos>
+    </data_reader>
+
+    <participant is_default_profile="true" profile_name="super_client_profile">
+      <rtps>
+        <builtin>
+          <discovery_config>
+            <discoveryProtocol>CLIENT</discoveryProtocol>
+
+            <discoveryServersList>
+              <RemoteServer prefix="44.53.00.5f.45.50.52.4f.53.49.4d.41">
+                <metatrafficUnicastLocatorList>
+                  <locator>
+                    <udpv4>
+                      <address>192.168.8.148</address>
+                      <port>11811</port>
+                    </udpv4>
+                  </locator>
+                </metatrafficUnicastLocatorList>
+              </RemoteServer>
+            </discoveryServersList>
+
+            <discoveryServersList>
+              <RemoteServer prefix="44.53.01.5f.45.50.52.4f.53.49.4d.41">
+                <metatrafficUnicastLocatorList>
+                  <locator>
+                    <udpv4>
+                      <address>192.168.8.91</address>
+                      <port>11888</port>
+                    </udpv4>
+                  </locator>
+                </metatrafficUnicastLocatorList>
+              </RemoteServer>
+            </discoveryServersList>
+
+             <discoveryServersList>
+                 <RemoteServer prefix="44.53.02.5f.45.50.52.4f.53.49.4d.41">
+                     <metatrafficUnicastLocatorList>
+                         <locator>
+                             <udpv4>
+                                 <address>127.0.0.1</address>
+                                 <port>11800</port>
+                             </udpv4>
+                         </locator>
+                     </metatrafficUnicastLocatorList>
+                 </RemoteServer>
+             </discoveryServersList>
+
+          </discovery_config>
+        </builtin>
+      </rtps>
+    </participant>
+  </profiles>
+</dds>

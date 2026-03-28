@@ -1,0 +1,51 @@
+{
+  "robogene_version": "1.0",
+  "type": "assembly",
+  "name": "arm_3dof",
+  "category": "arm_chain",
+  "description": "Serial arm of 3 arm segments (3 DoF). Attaches through port end_a of its first segment.",
+  "attach_port": "end_a",
+  "genotype": {
+    "root": 0,
+    "nodes": [
+      {
+        "id": 0,
+        "module": "arm_link",
+        "params": {}
+      },
+      {
+        "id": 1,
+        "module": "arm_link",
+        "params": {}
+      },
+      {
+        "id": 2,
+        "module": "arm_link",
+        "params": {}
+      }
+    ],
+    "edges": [
+      {
+        "parent": 0,
+        "parent_port": "end_b",
+        "child": 1,
+        "child_port": "end_a",
+        "roll_deg": 0.0
+      },
+      {
+        "parent": 1,
+        "parent_port": "end_b",
+        "child": 2,
+        "child_port": "end_a",
+        "roll_deg": 90.0
+      }
+    ]
+  },
+  "policy": {
+    "checkpoint": null,
+    "obs_dim": null,
+    "act_dim": 3,
+    "control_hz": 50,
+    "normalization": null
+  }
+}

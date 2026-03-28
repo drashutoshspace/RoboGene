@@ -1,0 +1,15 @@
+# Minimal run for checking the pipeline end to end.
+task: locomotion
+seed: 0
+episode:
+  length: 100
+  eval_episodes: 2
+ga:
+  population: 4
+  elites: 1
+  generations: 2
+  max_modules: 6
+rl:
+  budget: 512
+  n_steps: 256
+  batch_size: 64

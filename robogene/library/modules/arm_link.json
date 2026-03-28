@@ -1,0 +1,181 @@
+{
+  "robogene_version": "1.0",
+  "type": "module",
+  "name": "arm_link",
+  "category": "arm",
+  "description": "Arm segment (capsule, 0.3 m long) with one actuated hinge at the port through which it attaches to its parent.",
+  "geometry": {
+    "shape": "capsule",
+    "size": [
+      0.03,
+      0.12
+    ],
+    "density": 1000.0,
+    "com_offset": [
+      0,
+      0,
+      0
+    ],
+    "rgba": [
+      0.4,
+      0.45,
+      0.5,
+      1
+    ]
+  },
+  "actuation": {
+    "joint": "hinge",
+    "axis": [
+      1,
+      0,
+      0
+    ],
+    "anchor": "port",
+    "control_mode": "position",
+    "range": [
+      -1.57,
+      1.57
+    ],
+    "velocity_limit": 3.0,
+    "torque_limit": 8.0,
+    "kp": 15.0,
+    "kv": null,
+    "damping": 0.3,
+    "armature": 0.01
+  },
+  "sensing": [
+    {
+      "name": "joint_encoder",
+      "type": "joint_position",
+      "rate_hz": 100,
+      "frame": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "id": "end_a",
+      "position": [
+        0,
+        0,
+        -0.15
+      ],
+      "normal": [
+        0,
+        0,
+        -1
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "end_b",
+      "position": [
+        0,
+        0,
+        0.15
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "mid_+x",
+      "position": [
+        0.03,
+        0,
+        0
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "mid_-x",
+      "position": [
+        -0.03,
+        0,
+        0
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "mid_+y",
+      "position": [
+        0,
+        0.03,
+        0
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "mid_-y",
+      "position": [
+        0,
+        -0.03,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    }
+  ],
+  "policy": {
+    "checkpoint": null,
+    "obs_dim": null,
+    "act_dim": 1,
+    "control_hz": 50,
+    "normalization": null
+  }
+}

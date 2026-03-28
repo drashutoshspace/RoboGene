@@ -1,0 +1,251 @@
+{
+  "robogene_version": "1.0",
+  "type": "module",
+  "name": "body_small",
+  "category": "body",
+  "description": "Small base link (box). Simplified MoonBot body.",
+  "geometry": {
+    "shape": "box",
+    "size": [
+      0.15,
+      0.1,
+      0.05
+    ],
+    "density": 500.0,
+    "com_offset": [
+      0,
+      0,
+      0
+    ],
+    "rgba": [
+      0.35,
+      0.38,
+      0.42,
+      1
+    ]
+  },
+  "actuation": {
+    "joint": "fixed",
+    "axis": null,
+    "anchor": null,
+    "control_mode": null,
+    "range": null,
+    "velocity_limit": null,
+    "torque_limit": null,
+    "kp": null,
+    "kv": null,
+    "damping": 0.0,
+    "armature": 0.0
+  },
+  "sensing": [
+    {
+      "name": "imu",
+      "type": "imu",
+      "rate_hz": 100,
+      "frame": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "id": "+x",
+      "position": [
+        0.15,
+        0,
+        0
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "-x",
+      "position": [
+        -0.15,
+        0,
+        0
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "+y",
+      "position": [
+        0,
+        0.1,
+        0
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "-y",
+      "position": [
+        0,
+        -0.1,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "+z",
+      "position": [
+        0,
+        0,
+        0.05
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "-z",
+      "position": [
+        0,
+        0,
+        -0.05
+      ],
+      "normal": [
+        0,
+        0,
+        -1
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "+y_front",
+      "position": [
+        0.1,
+        0.1,
+        0
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "+y_rear",
+      "position": [
+        -0.1,
+        0.1,
+        0
+      ],
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "-y_front",
+      "position": [
+        0.1,
+        -0.1,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "-y_rear",
+      "position": [
+        -0.1,
+        -0.1,
+        0
+      ],
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    }
+  ],
+  "policy": {
+    "checkpoint": null,
+    "obs_dim": null,
+    "act_dim": 0,
+    "control_hz": 50,
+    "normalization": null
+  }
+}

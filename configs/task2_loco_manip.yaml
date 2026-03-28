@@ -1,0 +1,21 @@
+# Locomotion with arm reaching on flat terrain; every robot needs a wheel and an arm.
+task: loco_manip
+seed: 0
+terrain:
+  type: flat
+ga:
+  population: 16
+  elites: 4
+  generations: 56
+  require_wheel: true
+  require_arm: true
+checks:
+  stability: true
+  reachability: true
+rl:
+  budget: 200000
+reward:
+  alpha: 1.0
+  w_arm: 1.0
+  beta: 0.01
+  gamma_r: 0.001

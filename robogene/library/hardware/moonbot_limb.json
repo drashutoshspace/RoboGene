@@ -1,0 +1,74 @@
+{
+  "robogene_version": "1.0",
+  "type": "hardware_module",
+  "name": "moonbot_limb",
+  "category": "limb_module",
+  "description": "MoonBot Limb module: articulated seven-joint limb that can act as a leg or an arm.",
+  "joints": [
+    {
+      "name": "joint_1",
+      "type": "hinge",
+      "control_mode": "position",
+      "velocity_limit": 0.654,
+      "torque_limit": 112.1,
+      "gear_ratio": 960,
+      "range": null
+    },
+    {
+      "name": "joint_2",
+      "type": "hinge",
+      "control_mode": "position",
+      "velocity_limit": 0.654,
+      "torque_limit": 83.0,
+      "gear_ratio": 960,
+      "range": null
+    },
+    {
+      "name": "joint_3",
+      "type": "hinge",
+      "control_mode": "position",
+      "velocity_limit": 0.654,
+      "torque_limit": 83.7,
+      "gear_ratio": 960,
+      "range": null
+    },
+    {
+      "name": "joint_4",
+      "type": "hinge",
+      "control_mode": "position",
+      "velocity_limit": 0.654,
+      "torque_limit": 81.6,
+      "gear_ratio": 960,
+      "range": null
+    },
+    {
+      "name": "joint_5",
+      "type": "hinge",
+      "control_mode": "position",
+      "velocity_limit": 0.654,
+      "torque_limit": 82.9,
+      "gear_ratio": 960,
+      "range": null
+    },
+    {
+      "name": "joint_6",
+      "type": "hinge",
+      "control_mode": "position",
+      "velocity_limit": 0.654,
+      "torque_limit": 83.8,
+      "gear_ratio": 960,
+      "range": null
+    },
+    {
+      "name": "joint_7",
+      "type": "hinge",
+      "control_mode": "position",
+      "velocity_limit": 0.654,
+      "torque_limit": 84.2,
+      "gear_ratio": 960,
+      "range": null
+    }
+  ],
+  "source": "MoonBot motor drive configuration: gear reduction 960:1, max gear input speed 6000 rpm, rated motor torque and torque constant per drive",
+  "notes": "Joint i uses the limits of drive node i (assumed ordering). Position limits are not part of the drive configuration and are left unset."
+}

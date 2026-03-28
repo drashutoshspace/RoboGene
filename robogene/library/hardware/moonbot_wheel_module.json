@@ -1,0 +1,27 @@
+{
+  "robogene_version": "1.0",
+  "type": "hardware_module",
+  "name": "moonbot_wheel_module",
+  "category": "wheel_module",
+  "description": "MoonBot Wheel module: one differential-drive unit with two independently driven wheels.",
+  "joints": [
+    {
+      "name": "wheel_1",
+      "type": "continuous",
+      "control_mode": "velocity",
+      "velocity_limit": 0.654,
+      "torque_limit": 80.6,
+      "gear_ratio": 960
+    },
+    {
+      "name": "wheel_2",
+      "type": "continuous",
+      "control_mode": "velocity",
+      "velocity_limit": 0.654,
+      "torque_limit": 80.6,
+      "gear_ratio": 960
+    }
+  ],
+  "source": "MoonBot motor drive configuration: gear reduction 960:1, max gear input speed 6000 rpm, rated motor torque and torque constant per drive",
+  "notes": "Velocity limit = 6000 rpm / 960 = 0.654 rad/s at the wheel. Torque limit = rated motor torque x 960 (no efficiency loss assumed)."
+}

@@ -1,0 +1,12 @@
+Session.vim
+repos/
+cache/
+cache
+log/
+bash_completion_doit.bash
+__pycache__/
+.doit.db*
+workspace/
+tools/output.urdf
+.pixi
+.vscode/

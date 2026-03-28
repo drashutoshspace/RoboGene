@@ -1,0 +1,15 @@
+# Wheel-pair and center-arm mapping of a four-wheel morphology onto two MoonBot wheel modules and one limb.
+hardware:
+  wheel_module: moonbot_wheel_module
+  limb: moonbot_limb
+wheels:  # hardware wheel joint -> simulated wheel node
+  - {hardware: "wheel module 1 / wheel 1", node: 2, sign: 1.0}
+  - {hardware: "wheel module 1 / wheel 2", node: 4, sign: 1.0}
+  - {hardware: "wheel module 2 / wheel 1", node: 1, sign: 1.0}
+  - {hardware: "wheel module 2 / wheel 2", node: 3, sign: 1.0}
+limb:
+  center_arm_node: 5  # its command is sent to every limb joint
+  joints: 7
+rollout:
+  steps: 1000
+  goal: [10.0, 0.0]

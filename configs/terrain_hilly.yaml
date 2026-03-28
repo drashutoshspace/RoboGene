@@ -1,0 +1,8 @@
+# Hilly terrain for evaluating flat-trained policies without retraining.
+terrain:
+  type: hilly
+  friction: 0.5
+goal:
+  x_range: [5.0, 40.0]  # stays on the height field
+  y_range: [-8.0, 8.0]
+  min_distance: 5.0

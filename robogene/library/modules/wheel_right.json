@@ -1,0 +1,83 @@
+{
+  "robogene_version": "1.0",
+  "type": "module",
+  "name": "wheel_right",
+  "category": "wheel",
+  "description": "Wheel unit, right variant (hub on the +z face), continuous rotation about its axle.",
+  "geometry": {
+    "shape": "cylinder",
+    "size": [
+      0.1,
+      0.025
+    ],
+    "density": 1000.0,
+    "com_offset": [
+      0,
+      0,
+      0
+    ],
+    "rgba": [
+      0.25,
+      0.3,
+      0.35,
+      1
+    ]
+  },
+  "actuation": {
+    "joint": "continuous",
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "anchor": "center",
+    "control_mode": "velocity",
+    "range": null,
+    "velocity_limit": 6.0,
+    "torque_limit": 3.0,
+    "kp": null,
+    "kv": 3.0,
+    "damping": 0.05,
+    "armature": 0.005
+  },
+  "sensing": [
+    {
+      "name": "wheel_encoder",
+      "type": "joint_velocity",
+      "rate_hz": 100,
+      "frame": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "id": "hub",
+      "position": [
+        0,
+        0,
+        0.025
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    }
+  ],
+  "policy": {
+    "checkpoint": null,
+    "obs_dim": null,
+    "act_dim": 1,
+    "control_hz": 50,
+    "normalization": null
+  }
+}

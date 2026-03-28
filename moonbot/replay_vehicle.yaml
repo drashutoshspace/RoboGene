@@ -1,0 +1,15 @@
+# Columns of commands.csv -> motion stack joints of the Vehicle configuration
+# (limb = leg 4, wheel modules = legs 11 and 12). Check joint names against the robot URDF
+# (bash tools/urdf_extract.bash) and replace every SET_ placeholder before replaying.
+channels:
+  - {column: wheel_1, leg: 11, joint: wheel11_left_joint, field: velocity}
+  - {column: wheel_2, leg: 11, joint: wheel11_right_joint, field: velocity}
+  - {column: wheel_3, leg: 12, joint: wheel12_left_joint, field: velocity}
+  - {column: wheel_4, leg: 12, joint: wheel12_right_joint, field: velocity}
+  - {column: limb_1, leg: 4, joint: SET_limb_joint_1, field: position}
+  - {column: limb_2, leg: 4, joint: SET_limb_joint_2, field: position}
+  - {column: limb_3, leg: 4, joint: SET_limb_joint_3, field: position}
+  - {column: limb_4, leg: 4, joint: SET_limb_joint_4, field: position}
+  - {column: limb_5, leg: 4, joint: SET_limb_joint_5, field: position}
+  - {column: limb_6, leg: 4, joint: SET_limb_joint_6, field: position}
+  - {column: limb_7, leg: 4, joint: SET_limb_joint_7, field: position}

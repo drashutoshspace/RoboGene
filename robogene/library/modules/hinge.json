@@ -1,0 +1,105 @@
+{
+  "robogene_version": "1.0",
+  "type": "module",
+  "name": "hinge",
+  "category": "hinge",
+  "description": "Actuated revolute joint module. The joint sits at the port through which the module attaches to its parent.",
+  "geometry": {
+    "shape": "cylinder",
+    "size": [
+      0.04,
+      0.03
+    ],
+    "density": 1000.0,
+    "com_offset": [
+      0,
+      0,
+      0
+    ],
+    "rgba": [
+      0.95,
+      0.45,
+      0.1,
+      1
+    ]
+  },
+  "actuation": {
+    "joint": "hinge",
+    "axis": [
+      1,
+      0,
+      0
+    ],
+    "anchor": "port",
+    "control_mode": "position",
+    "range": [
+      -1.57,
+      1.57
+    ],
+    "velocity_limit": 3.0,
+    "torque_limit": 10.0,
+    "kp": 20.0,
+    "kv": null,
+    "damping": 0.5,
+    "armature": 0.01
+  },
+  "sensing": [
+    {
+      "name": "joint_encoder",
+      "type": "joint_position",
+      "rate_hz": 100,
+      "frame": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "id": "in",
+      "position": [
+        0,
+        0,
+        -0.03
+      ],
+      "normal": [
+        0,
+        0,
+        -1
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    },
+    {
+      "id": "out",
+      "position": [
+        0,
+        0,
+        0.03
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "roll_options_deg": [
+        0,
+        90,
+        180,
+        270
+      ]
+    }
+  ],
+  "policy": {
+    "checkpoint": null,
+    "obs_dim": null,
+    "act_dim": 1,
+    "control_hz": 50,
+    "normalization": null
+  }
+}

@@ -1,0 +1,247 @@
+[workspace]
+name = "robogene-moonbot"
+description = ""
+channels = ["https://prefix.dev/conda-forge", "https://prefix.dev/motion-stack", "farm-ng"]
+platforms = [
+"linux-64", 
+"linux-aarch64",
+]
+
+# Dependencies used by all environments
+[dependencies]
+# our packages
+pysdl2 = "*"
+asyncio_for_robotics = "*"
+# ms dependencies
+python = "*"
+pytest = "*"
+numpy = "*"
+nptyping = "*"
+quaternion = "*"
+scipy = "*"
+spatialmath-python = "*"
+roboticstoolbox-python  = "*"
+urwid  = "*"
+# other dependencies
+doit = "*"
+python-can = "*"
+smbus2 = "*"
+opencv = "*"
+py-opencv = "*"
+libopencv = "*"
+librealsense = "*" # this is librealsense sdk 2.0
+pyrealsense2 = "*"
+tmux = "*"
+sdl2 = "*"
+sdl2_image = "*"
+gogo_keyboard = "*"
+# sdl2_ttf = "*"
+# sdl2_mixer = "*"
+# sdl2_gfx = "*"
+# Build tools
+compilers = "*"
+pkg-config = "*"
+cmake = "*"
+make = "*"
+ninja = "*"
+# ROS specific tools
+rosdep = "*"
+colcon-common-extensions = "*"
+colcon-argcomplete = "*"
+colcon-bash = "*"
+colcon-ros = "*"
+argcomplete ="*"
+
+[pypi-dependencies]
+pinpong = "*"
+pyapriltags = "*"
+# pysdl2-dll = "*"
+
+# [target.linux-64.dependencies]
+# cmake = "<=3.5" # for old apriltag lib
+#
+# [target.linux-64.pypi-dependencies]
+# apriltag = "*"
+
+[target.linux.dependencies]
+libgl-devel = "*"
+
+# Define all the different ROS environments
+# Each environment corresponds to a different ROS distribution
+# and can be activated using the `pixi run/shell -e <environment>` command.
+[environments]
+default = { features = ["jazzy"] }
+humble = { features = ["humble"] }
+jazzy = { features = ["jazzy"] }
+kilted = { features = ["kilted"] }
+
+### ROS Humble ####
+[feature.humble]
+channels = ["https://prefix.dev/robostack-humble"]
+
+[feature.humble.dependencies]
+# setuptools = "<=58.2.0"
+ros-humble-ros-core = "*"
+ros-humble-ros2cli = "*"
+ros-humble-xacro = "*"
+ros-humble-joint-state-publisher = "*"
+ros-humble-robot-state-publisher = "*"
+ros-humble-sensor-msgs = "*"
+ros-humble-tf2-sensor-msgs = "*"
+ros-humble-std-msgs = "*"
+ros-humble-builtin-interfaces = "*"
+ros-humble-rviz2 = "*"
+ros-humble-rclpy = "*"
+ros-humble-rclcpp = "*"
+ros-humble-ament-cmake-auto = "*"
+ros-humble-rmw-cyclonedds-cpp = "*"
+ros-humble-rmw-fastrtps-cpp = "*"
+ros-humble-rmw-zenoh-cpp = "*"
+ros-humble-rosbag2 = "*"
+ros-humble-foxglove-bridge = "*"
+# VVV our pakages
+ros-humble-keyboard-event = ">=1.1.3"
+ros-humble-keyboard-event-msgs = ">=1.0.3"
+ros-humble-motion-stack = ">=1.0.2"
+ros-humble-motion-stack-msgs = "*"
+ros-humble-motion-stack-tuto = ">=1.0.0"
+ros-humble-hero-epos = ">=1.0.1"
+ros-humble-odrive-can = "*"
+
+### ROS Jazzy ####
+[feature.jazzy]
+channels = ["https://prefix.dev/robostack-jazzy"]
+
+[feature.jazzy.dependencies]
+# setuptools = "<=61.1.0"
+ros-jazzy-ros-core = "*"
+ros-jazzy-ros2cli = "*"
+ros-jazzy-xacro = "*"
+ros-jazzy-joint-state-publisher = "*"
+ros-jazzy-robot-state-publisher = "*"
+ros-jazzy-sensor-msgs = "*"
+ros-jazzy-tf2-sensor-msgs = "*"
+ros-jazzy-std-msgs = "*"
+ros-jazzy-builtin-interfaces = "*"
+ros-jazzy-rviz2 = "*"
+ros-jazzy-rclpy = "*"
+ros-jazzy-rclcpp = "*"
+ros-jazzy-ament-cmake-auto = "*"
+ros-jazzy-rmw-cyclonedds-cpp = "*"
+ros-jazzy-rmw-fastrtps-cpp = "*"
+ros-jazzy-rmw-zenoh-cpp = "*"
+ros-jazzy-rosbag2 = "*"
+ros-jazzy-foxglove-bridge = "*"
+# VVV our pakages
+ros-jazzy-keyboard-event =">=1.1.3" 
+ros-jazzy-keyboard-event-msgs = ">=1.0.3"
+ros-jazzy-motion-stack = ">=1.0.2"
+ros-jazzy-motion-stack-msgs = "*"
+ros-jazzy-motion-stack-tuto = ">=1.0.0"
+ros-jazzy-hero-epos = ">=1.0.1"
+ros-jazzy-odrive-can = "*"
+
+### ROS Kilted ####
+[feature.kilted]
+channels = ["https://prefix.dev/robostack-kilted"]
+
+[feature.kilted.dependencies]
+# setuptools = "<=79.0.0"
+ros-kilted-ros-core = "*"
+ros-kilted-ros2cli = "*"
+ros-kilted-xacro = "*"
+ros-kilted-joint-state-publisher = "*"
+ros-kilted-robot-state-publisher = "*"
+ros-kilted-sensor-msgs = "*"
+ros-kilted-tf2-sensor-msgs = "*"
+ros-kilted-std-msgs = "*"
+ros-kilted-builtin-interfaces = "*"
+ros-kilted-rviz2 = "*"
+ros-kilted-rclpy = "*"
+ros-kilted-rclcpp = "*"
+ros-kilted-ament-cmake-auto = "*"
+ros-kilted-rmw-cyclonedds-cpp = "*"
+ros-kilted-rmw-fastrtps-cpp = "*"
+ros-kilted-rmw-zenoh-cpp = "*"
+ros-kilted-rosbag2 = "*"
+ros-kilted-foxglove-bridge = "*"
+# VVV our pakages
+ros-kilted-keyboard-event = ">=1.1.3"
+ros-kilted-keyboard-event-msgs = ">=1.0.3"
+ros-kilted-motion-stack = ">=1.0.2"
+ros-kilted-motion-stack-msgs = "*"
+ros-kilted-motion-stack-tuto = ">=1.0.0"
+ros-kilted-hero-epos = ">=1.0.1"
+ros-kilted-odrive-can = "*"
+
+[activation.env] # env variables for everyone
+TERM = "xterm-256color" # that's because some fancy terminal color might be fucked
+
+[feature.humble.activation]
+# For activation scripts, we use bash for Unix-like systems
+scripts = [
+"workspace/install-humble/setup.bash",
+"./argcomplete_fix.bash",
+"scripts/source_dds.bash",
+]
+
+[feature.humble.activation.env]
+ROS_DOMAIN_ID = "42"
+
+[feature.humble.tasks]
+sim_rviz = "bash ./scripts/rviz_simu.bash"
+sim_robot = "bash ./scripts/start_stack.bash"
+viz = "bash ./scripts/rviz_viz.bash"
+robot = "bash ./start_tmuxed.sh"
+global_router = "RUST_LOG=debug bash ./scripts/zenoh/router_server.bash"
+local_router = "RUST_LOG=debug bash ./scripts/zenoh/local_server.bash"
+calibration = "bash ./scripts/calibration.bash"
+operator = "bash ./operator.bash"
+build = "doit workspace && colcon build --continue-on-error --symlink-install --cmake-args -Wno-dev -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DPython_FIND_VIRTUALENV=ONLY -DPython3_FIND_VIRTUALENV=ONLY --base-paths ./workspace/src --build-base ./workspace/build-humble --install-base ./workspace/install-humble"
+clean = "rm -r ./workspace/build-humble ./workspace/install-humble ./log"
+
+[feature.jazzy.activation]
+# For activation scripts, we use bash for Unix-like systems
+scripts = [
+"workspace/install-jazzy/setup.bash",
+"./argcomplete_fix.bash", 
+"scripts/source_dds.bash",
+]
+
+[feature.jazzy.activation.env]
+ROS_DOMAIN_ID = "50"
+
+[feature.jazzy.tasks]
+sim_rviz = "bash ./scripts/rviz_simu.bash"
+sim_robot = "bash ./scripts/start_stack.bash"
+viz = "bash ./scripts/rviz_viz.bash"
+robot = "bash ./start_tmuxed.sh"
+global_router = "RUST_LOG=debug bash ./scripts/zenoh/router_server.bash"
+local_router = "RUST_LOG=debug bash ./scripts/zenoh/local_server.bash"
+operator = "bash ./operator.bash"
+calibration = "bash ./scripts/calibration.bash"
+download = "doit -n 16 download"
+limb_id = "doit limb_id"
+build = "doit workspace && colcon build --continue-on-error --symlink-install --cmake-args -Wno-dev -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DPython_FIND_VIRTUALENV=ONLY -DPython3_FIND_VIRTUALENV=ONLY --base-paths ./workspace/src --build-base ./workspace/build-jazzy --install-base ./workspace/install-jazzy "
+clean = "rm -r ./workspace/build-jazzy ./workspace/install-jazzy ./log"
+
+[feature.kilted.activation]
+# For activation scripts, we use bash for Unix-like systems
+scripts = [
+"workspace/install-kilted/setup.bash",
+"./argcomplete_fix.bash",
+"scripts/source_dds.bash",
+]
+
+[feature.kilted.activation.env]
+ROS_DOMAIN_ID = "52"
+
+[feature.kilted.tasks]
+sim_rviz = "bash ./scripts/rviz_simu.bash"
+sim_robot = "bash ./scripts/start_stack.bash"
+viz = "bash ./scripts/rviz_viz.bash"
+robot = "bash ./start_tmuxed.sh"
+operator = "bash ./operator.bash"
+calibration = "bash ./scripts/calibration.bash"
+build = "doit workspace && colcon build --continue-on-error --symlink-install --cmake-args -Wno-dev -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DPython_FIND_VIRTUALENV=ONLY -DPython3_FIND_VIRTUALENV=ONLY --base-paths ./workspace/src --build-base ./workspace/build-kilted --install-base ./workspace/install-kilted "
+clean = "rm -r ./workspace/build-kilted ./workspace/install-kilted ./log"

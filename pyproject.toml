@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robogene"
+version = "1.0.0"
+description = "Task-oriented morphology evolution of modular reconfigurable lunar robots through a genetic algorithm and reinforcement learning"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mujoco>=3.1",
+    "gymnasium>=0.29",
+    "stable-baselines3>=2.3",
+    "torch>=2.2",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["robogene*"]
+
+[tool.setuptools.package-data]
+robogene = ["library/modules/*.json", "library/assemblies/*.json", "library/hardware/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
